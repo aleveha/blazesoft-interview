@@ -1,0 +1,15 @@
+@import url("tailwindcss/base.css");
+@import url("tailwindcss/components.css");
+@import url("tailwindcss/utilities.css");
+
+body {
+	@apply font-sans text-base;
+
+	&.light {
+		@apply bg-white;
+	}
+
+	&.dark {
+		@apply bg-gray-900 text-white;
+	}
+}
