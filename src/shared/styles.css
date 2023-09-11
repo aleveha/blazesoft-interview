@@ -4,12 +4,12 @@
 
 body {
 	@apply font-sans text-base;
+}
 
-	&.light {
-		@apply bg-white;
-	}
+.button {
+	@apply rounded-lg bg-bookstoreBlue hover:bg-bookstoreBlue/90 px-4 py-2 text-white smooth;
+}
 
-	&.dark {
-		@apply bg-gray-900 text-white;
-	}
+.smooth {
+	@apply transition duration-200 ease-in-out;
 }

@@ -9,6 +9,20 @@ export default {
 	darkMode: "class",
 	theme: {
 		extend: {
+			colors: {
+				bookstoreBlue: "#1C3144",
+				bookstoreOrange: "#E48A40",
+				bookstoreYellow: "#FFD700",
+			},
+			container: {
+				screens: {
+					sm: "none",
+					md: rem(688),
+					lg: rem(912),
+					xl: rem(1120),
+					xxl: rem(1216),
+				},
+			},
 			fontFamily: {
 				sans: ["var(--font-base)", ...fontFamily.sans],
 				custom: ["var(--font-custom)", ...fontFamily.sans],
@@ -19,15 +33,6 @@ export default {
 				lg: em(992),
 				xl: em(1280),
 				xxl: em(1440),
-			},
-			container: {
-				screens: {
-					sm: "none",
-					md: rem(688),
-					lg: rem(912),
-					xl: rem(1120),
-					xxl: rem(1216),
-				},
 			},
 			zIndex: {
 				1: "1",
