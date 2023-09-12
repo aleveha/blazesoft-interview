@@ -13,6 +13,7 @@
 		"moduleResolution": "node",
 		"noEmit": true,
 		"paths": {
+			"@api/*": ["./src/api/*"],
 			"@shared/*": ["./src/shared/*"]
 		},
 		"plugins": [
