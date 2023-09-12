@@ -12,9 +12,10 @@
 		"module": "esnext",
 		"moduleResolution": "node",
 		"noEmit": true,
+		"baseUrl": "src",
 		"paths": {
-			"@api/*": ["./src/api/*"],
-			"@shared/*": ["./src/shared/*"]
+			"@api/*": ["api/*"],
+			"@shared/*": ["shared/*"]
 		},
 		"plugins": [
 			{
