@@ -1,9 +1,9 @@
 import { cx } from "@shared/utils/cx";
-import { forwardRef, HTMLAttributes, ReactNode } from "react";
+import { forwardRef, ButtonHTMLAttributes, ReactNode } from "react";
 
 type ButtonVariants = "solid" | "outline";
 
-interface Props extends HTMLAttributes<HTMLButtonElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
 	children?: ReactNode;
 	variant?: ButtonVariants;
