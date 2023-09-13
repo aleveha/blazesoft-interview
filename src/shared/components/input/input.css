@@ -1,0 +1,19 @@
+.input {
+    @apply flex flex-col gap-1 w-full pb-5;
+
+    &--with-helper-text {
+        @apply pb-0;
+    }
+
+    &__label {
+        @apply text-sm font-medium
+    }
+
+    &__inner {
+        @apply rounded-md shadow-sm;
+    }
+
+    &__helper-text {
+        @apply text-xs text-red-500;
+    }
+}

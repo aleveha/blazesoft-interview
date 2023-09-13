@@ -8,5 +8,6 @@ body {
 
 @import url("components/label/label.css");
 @import url("components/button/button.css");
+@import url("components/input/input.css");
 
 @import url("tailwindcss/utilities.css");
