@@ -48,11 +48,11 @@ function hex2rgba(hexColor: string, alpha = 1): string {
  * @returns Random color as string
  */
 export function randomColor(options: ColorOptions): string {
-	const haxColor = hex(options.text);
+	const hexColor = hex(options.text);
 
 	if (options.type === "hex") {
-		return haxColor;
+		return hexColor;
 	}
 
-	return hex2rgba(haxColor, options.opacity);
+	return hex2rgba(hexColor, options.opacity);
 }
