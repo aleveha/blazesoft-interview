@@ -7,6 +7,7 @@ interface BookReducers extends SliceCaseReducers<Book[]> {
 	delete: (prevState: Book[], action: PayloadAction<string>) => Book[];
 	reset: () => Book[];
 	setTestValue: () => Book[];
+	update: (prevState: Book[], action: PayloadAction<Book>) => Book[];
 }
 
 export const bookSlice = createSlice<Book[], BookReducers>({
@@ -16,6 +17,17 @@ export const bookSlice = createSlice<Book[], BookReducers>({
 		delete: (prevState, action: PayloadAction<string>) => prevState.filter(book => book.uuid !== action.payload),
 		reset: () => [],
 		setTestValue: () => DUMMY_BOOKS,
+		update: (prevState, action: PayloadAction<Book>) => {
+			const bookIndex = prevState.findIndex(book => book.uuid === action.payload.uuid);
+			if (bookIndex === -1) {
+				return [action.payload, ...prevState];
+			}
+
+			const newState = [...prevState];
+			newState[bookIndex] = action.payload;
+
+			return newState;
+		},
 	},
 });
 
