@@ -97,8 +97,8 @@ export const BookModifyForm: FC<Props> = ({ uuid }) => {
 									return "Price must be valid a number";
 								}
 							},
-							max: { value: 1_000_000, message: "Maximum price exceeded" },
-							min: { value: 1, message: "Minimum price exceeded" },
+							max: { value: 1_000_000, message: "Price must be lower than 1\xa0000\xa0000" },
+							min: { value: 1, message: "Price must be greater than 0" },
 						}}
 					/>
 				</div>
