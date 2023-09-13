@@ -31,7 +31,11 @@ export const BookModifyForm: FC<Props> = ({ uuid }) => {
 	const book = useSelector(state => state.books.find(_book => _book.uuid === uuid));
 	const dispatch = useDispatch();
 
-	const { control, handleSubmit } = useForm<BookFormData>({
+	const {
+		control,
+		formState: { isDirty },
+		handleSubmit,
+	} = useForm<BookFormData>({
 		defaultValues: getBookFormData(book ?? { uuid }),
 	});
 
@@ -42,6 +46,13 @@ export const BookModifyForm: FC<Props> = ({ uuid }) => {
 		},
 		[dispatch, router]
 	);
+
+	const handleBack = useCallback(() => {
+		// eslint-disable-next-line no-alert
+		if (!isDirty || confirm("Are you sure you want to go back? All unsaved changes will be lost.")) {
+			router.push("/");
+		}
+	}, [isDirty, router]);
 
 	return (
 		<form noValidate onSubmit={handleSubmit(onSubmit)}>
@@ -102,9 +113,14 @@ export const BookModifyForm: FC<Props> = ({ uuid }) => {
 						}}
 					/>
 				</div>
-				<Button type="submit" variant="solid">
-					Save book
-				</Button>
+				<div className="flex flex-wrap gap-4">
+					<Button type="submit" variant="solid">
+						Save book
+					</Button>
+					<Button onClick={handleBack} type="button" variant="outline">
+						Back to main page
+					</Button>
+				</div>
 			</div>
 		</form>
 	);
