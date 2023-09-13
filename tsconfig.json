@@ -15,7 +15,9 @@
 		"baseUrl": "src",
 		"paths": {
 			"@api/*": ["api/*"],
-			"@shared/*": ["shared/*"]
+			"@shared/*": ["shared/*"],
+			"@store": ["store/index.ts"],
+			"@store/*": ["store/*"]
 		},
 		"plugins": [
 			{
