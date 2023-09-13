@@ -38,7 +38,7 @@ export const Input = <FormData extends FieldValues>({
 				</label>
 			)}
 			{props.component === "textarea" ? (
-				<textarea className="input__inner" id={id} onChange={onChange} value={value} ref={ref} rows={3} />
+				<textarea className="input__inner" id={id} onChange={onChange} value={value} ref={ref} rows={6} />
 			) : (
 				<input className="input__inner" id={id} onChange={onChange} value={value} ref={ref} />
 			)}
