@@ -1,0 +1,11 @@
+.label {
+    @apply w-fit rounded-full px-3 py-0.5 text-sm;
+
+    &--color-gray {
+        @apply bg-neutral-200
+    }
+
+    &--color-gold {
+        @apply bg-bookstoreYellow/60;
+    }
+}

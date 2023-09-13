@@ -1,0 +1,11 @@
+.button {
+    @apply rounded-lg px-4 py-2 transition-all;
+
+    &--variant-solid {
+        @apply bg-bookstoreBlue hover:bg-bookstoreBlue/90 text-white;
+    }
+
+    &--variant-outline {
+        @apply border text-bookstoreBlue border-bookstoreBlue hover:bg-bookstoreBlue/5;
+    }
+}
