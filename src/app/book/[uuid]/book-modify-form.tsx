@@ -68,17 +68,6 @@ export const BookModifyForm: FC<Props> = ({ uuid }) => {
 						minLength: { value: 1, message: "Minimum length is 1 characters" },
 					}}
 				/>
-				<Input
-					component="textarea"
-					control={control}
-					isRequired
-					label="Book description"
-					name="description"
-					placeholder="Enter book description here.."
-					rules={{
-						maxLength: { value: 500, message: "Maximum length is 500 characters" },
-					}}
-				/>
 				<div className="flex flex-col gap-6 md:flex-row">
 					<Input
 						control={control}
@@ -113,6 +102,17 @@ export const BookModifyForm: FC<Props> = ({ uuid }) => {
 						}}
 					/>
 				</div>
+				<Input
+					component="textarea"
+					control={control}
+					isRequired
+					label="Book description"
+					name="description"
+					placeholder="Enter book description here.."
+					rules={{
+						maxLength: { value: 500, message: "Maximum length is 500 characters" },
+					}}
+				/>
 				<div className="flex flex-wrap gap-4">
 					<Button type="submit" variant="solid">
 						Save book
