@@ -5,7 +5,6 @@ import { randomColor } from "@shared/utils/randomColor";
 import { Book } from "@store/domains/books/types";
 import Link from "next/link";
 import { FC } from "react";
-import Balancer from "react-wrap-balancer";
 
 interface Props {
 	book: Book;
@@ -13,7 +12,7 @@ interface Props {
 }
 
 export const BookCard: FC<Props> = ({ book: { category, description, uuid, name, price }, onDelete }) => (
-	<li className="grid grid-cols-[auto_auto_1fr] gap-4 overflow-hidden rounded-xl border border-neutral-200 bg-white">
+	<li className="grid grid-cols-[min-content_auto_min-content] gap-4 overflow-hidden rounded-xl border border-neutral-200 bg-white">
 		<Link
 			className="group flex items-center justify-center px-4 sm:px-6 lg:px-8"
 			href={`/book/${uuid}`}
@@ -21,10 +20,10 @@ export const BookCard: FC<Props> = ({ book: { category, description, uuid, name,
 		>
 			<Icons.Book className="h-12 transition-all md:h-16 md:group-hover:scale-125" />
 		</Link>
-		<div className="flex w-full flex-col gap-2 py-2 md:gap-3 md:py-4">
+		<div className="flex flex-col gap-2 py-2 md:gap-3 md:py-4">
 			<Link className="w-fit" href={`/book/${uuid}`}>
-				<h3 className="text-lg font-semibold text-bookstoreBlue transition-all hover:text-bookstoreOrange md:text-xl lg:text-2xl">
-					<Balancer>{name}</Balancer>
+				<h3 className="line-clamp-2 text-lg font-semibold text-bookstoreBlue transition-all hover:text-bookstoreOrange md:text-xl lg:text-2xl">
+					{name}
 				</h3>
 			</Link>
 			<div className="flex flex-wrap items-center justify-start gap-4">
