@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Balancer from "react-wrap-balancer";
 import { BookModifyForm } from "./book-modify-form";
 
@@ -17,3 +18,8 @@ export default function Page({ params }: Props) {
 		</div>
 	);
 }
+
+export const metadata: Metadata = {
+	title: "Modify book | Blazesoft interview",
+	description: "On this page you can modify your book. You can change its name, description, price and category.",
+};
